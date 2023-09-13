@@ -170,7 +170,7 @@
     border-top: 1px solid var(--white);
     h3 {
       font-size: 1.2em;
-      margin: .5em 0;
+      margin: 0.5em 0;
     }
   }
 }
@@ -182,5 +182,17 @@
 .filteredCocktails {
   h2 {
     margin: 0 0 0.5em 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cocktails-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .cocktails-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

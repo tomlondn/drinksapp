@@ -1,0 +1,26 @@
+:root {
+  // Signalisiere, dass die Seite helle und dunkle Darstellung unterstützt.
+  //https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#aa-handling-user-agent-styles
+  color-scheme: light dark;
+
+  // Variablennamen zum Beschreiben der Farbe
+  --imperial-red: hsl(354.8 60.6% 51.2%);
+  --honeydew: hsl(105 55% 96%);
+  --powder-blue: hsl(182 43% 76%);
+  --celadon-blue: hsl(203 39% 44%);
+  --prussian-blue: hsl(215 50% 23%);
+  --black: hsl(0 10% 6%);
+  --orange: hsl(17, 100%, 58%);
+  --white: hsl(0, 0%, 100%);
+
+  // Variablennamen zum Beschreiben der Funktion
+
+  // https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web
+  @media (prefers-color-scheme: dark) {
+    --background-color: var(--honeydew);
+    --text-color: var(--white);
+    --heading-color: var(--imperial-red);
+    --link-color: var(--imperial-red);
+    --active-link-color: var(--orange);
+  }
+}

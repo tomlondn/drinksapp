@@ -1,0 +1,20 @@
+// Einzeiliger Kommentar. Siehe https://sass-lang.com/documentation/syntax/comments
+
+/* Ein
+mehrzeiliger
+Kommentar
+*/
+
+/*! Lauter Kommentar mit "!" wird beim kompilieren nicht entfernt.
+(Wichtig z.B. bei style.css von WordPress-Themes oder bei Lizenz-Informationen.) */
+
+/* Importiere Teildateien ("Partials"). Unterstrich und Dateiendung dürfen weggelassen werden.
+Hinweis: @use ersetzt das lange übliche @import, siehe dazu https://sass-lang.com/documentation/at-rules/import
+*/
+@use 'normalize';
+@use 'globals/queries';
+@use 'globals/colors';
+@use 'globals/spacings';
+@use 'layout';
+@use 'navigation';
+@use 'typographie';

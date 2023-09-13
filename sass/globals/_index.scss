@@ -1,0 +1,8 @@
+/* https://sass-lang.com/documentation/at-rules/forward
+Fasse die Funktionen und Sass-Variablen der Dateien so zusammen,
+dass sie in anderen Sass-Dateien genutzt werden können, wenn in diesen
+am Anfang einmal diese Zeile (ggf. mit angepasstem Pfad) steht:
+@use 'globals' as * 
+*/
+@forward 'functions';
+@forward 'queries';

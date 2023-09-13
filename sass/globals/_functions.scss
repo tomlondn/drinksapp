@@ -1,0 +1,34 @@
+/* Wenn man in neuen Sass-Versionen den / Operator für Divisionen
+nutzt, erhält man eine Warnmeldung, da dieser Syntax "deprecated" ist,
+d.h. in kommenden Versionen von Sass nicht mehr erlaubt ist, um Konflikte
+mit CSS zu vermeiden, da / in CSS immer häufiger verwendet wird, etwa 
+um den Alpha-Kanal bei Farbangaben zu markieren: rgb(100 100 100 / 0.7).
+
+Statt 10 / 2 sollte man künfigt math.div(10,2) schreiben und muss dafür
+am Anfang der Datei das "Mathematik-Modul" von Sass importieren.
+https://sass-lang.com/documentation/breaking-changes/slash-div
+Weitere Mathematik-Funktionen:
+https://sass-lang.com/documentation/modules/math
+ */
+@use 'sass:math';
+
+/* 
+    Diese Funktionen rechnen Pixel in rem bzw. em um. Einfach anstelle
+    von z.B. 20px die Funktion mit der Pixelzahl (ohne px!) aufrufen: rem(20)
+    Wie die meisten anderen fortgeschrittenen Features von Sass benötigt man
+    eigene Funktionen nicht unbedingt, und es genügt, sich auf die wichtigsten
+    und nützlichsten Sass-Features wie Nesting und Importe zu beschränken,
+    aber im wesentlichen "normales" CSS zu schreiben.
+    Mehr zu Funktionen:
+    https://sass-lang.com/documentation/at-rules/function
+    */
+
+@function em($size) {
+  $emSize: math.div($size, 16);
+  @return $emSize * 1em;
+}
+
+@function rem($size) {
+  $remSize: math.div($size, 16);
+  @return $remSize * 1rem;
+}

@@ -1,0 +1,88 @@
+/* 
+Dank fluider Typographie passt sich die Schriftgröße der Bildschirmbreite an,
+ohne dass man Media Queries nutzen muss.
+Der mittlere Wert innerhalb von clamp() ist der gewünschte Wert,
+und da er einen Anteil vw (Viewport Width) enthält, änder er sich
+mit der Bildschirmbreite. Der erste und der letzte Wert begrenzen
+diesen Wert nach unten und oben, sind also Minimal- und Maximalwerte.
+calc() kann man übrigens innerhalb von clamp(), min() und max() auch weglassen, 
+also statt calc(0.65rem + 0.21vw) einfach 0.65rem + 0.21vw schreiben.
+@link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.65rem + 0.21vw), 0.8rem);
+  --step--1: clamp(0.83rem, calc(0.77rem + 0.33vw), 1rem);
+  --step-0: clamp(1rem, calc(0.9rem + 0.49vw), 1.25rem);
+  --step-1: clamp(1.2rem, calc(1.06rem + 0.71vw), 1.56rem);
+  --step-2: clamp(1.44rem, calc(1.24rem + 1vw), 1.95rem);
+  --step-3: clamp(1.73rem, calc(1.45rem + 1.39vw), 2.44rem);
+  --step-4: clamp(2.07rem, calc(1.69rem + 1.91vw), 3.05rem);
+  --step-5: clamp(2.49rem, calc(1.97rem + 2.59vw), 3.82rem);
+}
+
+body {
+  color: var(--text-color);
+  font-size: var(--step-0);
+}
+
+/* Klassennamen wie .h2 ermöglichen es leicht, die semantisch
+  richtige Überschrift zu wählen (also z.B. keine Stufe auszulassen),
+  aber bei Bedarf eine h3 wie eine h2 aussehen zu lassen. */
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5 {
+  letter-spacing: -0.02em;
+  color: var(--heading-color);
+}
+
+h1,
+.h1 {
+  font-size: var(--step-5);
+}
+
+h2,
+.h2 {
+  font-size: var(--step-4);
+}
+
+h3,
+.h3 {
+  font-size: var(--step-3);
+}
+
+h4,
+.h4 {
+  font-size: var(--step-2);
+}
+
+h5,
+.h5 {
+  font-size: var(--step-1);
+}
+
+h6,
+.h6 {
+  font-size: var(--step-0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+  //https://developer.chrome.com/blog/css-text-wrap-balance
+  text-wrap: balance;
+}
+
+small {
+  font-size: var(--step--1);
+}

@@ -1,0 +1,8 @@
+@use 'functions' as *;
+
+$small-max: rem(500);
+$large-min: rem(1000);
+
+$small: 'width <= #{$small-max}';
+$medium: '#{$small-max} < width < #{$large-min}';
+$large: 'width >= #{$large-min}';
